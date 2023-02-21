@@ -1,0 +1,42 @@
+@use "function" as f;
+@use "variables" as v;
+
+
+@mixin text{
+    font-size:f.rem(16);
+    letter-spacing:f.rem(0.36);
+    font-family: v.$nunito-regular;
+    color:v.$black;
+}
+
+@mixin center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@mixin heading{
+    font-size: clamp(f.rem(24), f.rem(16) + 2vw ,f.rem(42));
+    font-family: v.$quicksand-bold;
+    color:v.$head-color;
+}
+
+@mixin appBlockHead{
+    color:v.$green;
+    font-size:clamp(f.rem(24), f.rem(16) + 2vw ,f.rem(26));
+    letter-spacing:f.rem(1.3);
+    font-family:v.$quicksand-bold;
+}
+
+@mixin appBlockAlign{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: f.rem(40);
+    gap:f.rem(10);
+}
+
+
+
+
+

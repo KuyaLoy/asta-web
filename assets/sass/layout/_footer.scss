@@ -1,0 +1,27 @@
+@use "../utilities/" as u;
+
+footer{
+    margin-top:clamp(u.rem(26), u.rem(16) + 7vw ,u.rem(160));
+    background-color:u.$footer-bg;
+    font-family: u.$nunito-regular;
+    padding-top:u.rem(30);
+    .footer__links{
+        display:flex;
+        justify-content: center;
+        gap:2%;
+        padding:0 u.rem(15);
+        flex-wrap:wrap;
+        a{
+            color:u.$black;
+        }
+        li{
+            @include u.breakpoint-max(xs){
+                padding:u.rem(5);
+            }
+        }
+        
+    }
+    .footer__logo{
+        padding-top:u.rem(40);
+    }
+}

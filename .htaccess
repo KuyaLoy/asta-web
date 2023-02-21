@@ -1,0 +1,7 @@
+
+RewriteEngine On
+RewriteRule ^([en|ru|jp|cn|in|kr]+?)/?$ ?lang=$1
+RewriteRule ^([a-zA-Z_-]+)$ $1.php [NC,L]
+RewriteRule ^([en|ru|jp|cn|in|kr]+?)/([a-zA-Z_-]+?)$ $2.php?lang=$1 [NC,L]
+RewriteRule "^(.*/)?\.git/" - [F,L]
+RedirectMatch 404 /\.git

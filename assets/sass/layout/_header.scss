@@ -1,0 +1,97 @@
+@use "../utilities/" as u;
+
+
+header{
+    padding: u.rem(30) 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: auto;
+    z-index: 998;
+    transition: all 0.7s;
+    opacity: 1;
+    height: u.rem(80);
+  
+    @include u.breakpoint-max(small){
+        height:u.rem(70);
+        padding:u.rem(25) 0;
+        top:0 !important;
+    }
+    .header{
+        display:flex;
+        // gap:15%;
+        @include u.breakpoint-max(medium){
+            gap:8%;
+        }
+        @include u.breakpoint-max(xx-medium){
+            justify-content:space-between;
+        }
+        &__dropdown{
+            display:none;
+            position: relative;
+            z-index: 999;
+            span{
+                font-size:1.5rem;
+            }
+            @include u.breakpoint-max(xx-medium){
+                display:block;
+                top:-2px;
+            }
+            .icon-close{
+                display:none;
+            }
+        }
+        &__navigation{
+            width:100%;
+            padding-left:10%;
+            @include u.breakpoint-max(xx-medium){
+                padding-left:0;
+            }
+            @include u.breakpoint-max(xx-medium){
+                flex-direction: column;
+                background: u.$white;
+                height: 100%;
+                top: 0;
+                position: fixed;
+                width: 100%;
+                z-index: 11;
+                left: -100%;
+                transition: 0.4s ease-in;
+                justify-content: start;
+                margin-left: 0;
+                max-width: 450px;
+                overflow-y:scroll;
+            }
+            .slider-logo{
+                background:u.$white;
+                position:sticky;
+                top:0;
+                left:0;
+                right:0;
+            }
+            .header-navbar{
+                display:flex;
+                @include u.breakpoint-max(xx-medium){
+                    flex-direction: column;
+                    gap:u.rem(50);
+                    padding: u.rem(50) u.rem(12);
+                    align-items: center;
+                }
+                .navbar-item{
+                    padding:0 3%;
+
+                    @include u.breakpoint-max(x-medium){
+                        padding:0 2%;
+                    }
+                    @include u.breakpoint-max(medium){
+                        padding:0 1%;
+                    }
+                    .link{
+                        @include u.text;
+                        color:u.$black;
+                    }             
+                }
+            }
+        }
+    }
+}

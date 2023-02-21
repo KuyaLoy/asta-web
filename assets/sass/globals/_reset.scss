@@ -1,0 +1,52 @@
+@use "../utilities" as u;
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    margin:0;
+    background-color: u.$bg-color;
+    overflow-x: hidden !important;
+}
+
+p{
+    padding:0;
+    margin:0;
+}
+
+a,
+a:visited,
+a:active{
+    text-decoration:none;
+}
+
+ul{
+    margin:0;
+    padding-left:0;
+}
+
+li{
+    list-style-type:none;
+}
+
+.fluid-container{
+    max-width:u.rem(1426);
+    margin-inline:auto;
+    padding:0 u.rem(30);
+    @include u.breakpoint-max(xs){
+        padding:0 u.rem(15);
+    }
+}
+
+
+.container{
+    max-width:u.rem(1420);
+    margin-inline:auto;
+    padding:0 u.rem(30);
+    @include u.breakpoint-max(xs){
+        padding:0 u.rem(20);
+    }
+}
